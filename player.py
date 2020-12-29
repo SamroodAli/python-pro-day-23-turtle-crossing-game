@@ -1,6 +1,6 @@
 """Player data using turtle module"""
 from turtle import Turtle
-STARTING_POSITION = (0, -275)
+STARTING_POSITION = (0, -270)
 
 
 class Player(Turtle):

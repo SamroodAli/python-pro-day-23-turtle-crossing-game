@@ -11,5 +11,10 @@ class Car(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("square")
+        self.penup()
         self.color(random.choice(CAR_COLORS))
         self.shapesize(stretch_len=random.choice(CAR_LENGTH))
+        self.setheading(180)
+
+    def move(self):
+        self.forward(20)
