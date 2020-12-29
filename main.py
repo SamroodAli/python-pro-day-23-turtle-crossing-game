@@ -4,6 +4,7 @@ from game_screen import screen
 from player import Player
 
 
+
 # game instances
 player = Player()
 is_game_on = True
