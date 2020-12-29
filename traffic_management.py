@@ -21,7 +21,7 @@ class Traffic:
         self.cars.append(new_car)
 
     def initialise_roads(self):
-        for lane in range(-240, 260, 25):
+        for lane in range(-240, 211, 25):
             self.roads.append(lane)
 
     def move_car(self):

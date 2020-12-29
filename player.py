@@ -16,6 +16,11 @@ class Player(Turtle):
 
     def move_up(self):
         self.forward(25)
+        print(self.pos())
+
+    def move_down(self):
+        self.backward(25)
 
     def event_listener(self):
         onkey(key="Up", fun=self.move_up)
+        onkey(key="Down", fun=self.move_down)
