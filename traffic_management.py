@@ -13,6 +13,7 @@ class Traffic:
     def start_traffic(self):
         self.new_car()
         self.move_car()
+        self.remove_crossed_cars()
 
     def new_car(self):
         new_car = Car()
@@ -26,3 +27,8 @@ class Traffic:
     def move_car(self):
         for car in self.cars:
             car.move()
+
+    def remove_crossed_cars(self):
+        for car in self.cars:
+            if car.xcor() < -350:
+                self.cars.remove(car)
