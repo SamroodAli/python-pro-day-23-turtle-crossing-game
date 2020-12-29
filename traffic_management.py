@@ -5,6 +5,7 @@ import random
 
 class Traffic:
     def __init__(self):
+        self.speed  = 0.1
         self.roads = []
         self.initialise_roads()
         self.cars = []
@@ -18,6 +19,7 @@ class Traffic:
     def new_car(self):
         lane = self.new_road()
         new_car = Car()
+        new_car.lane = lane
         new_car.goto(300, lane)
         self.cars.append(new_car)
 
@@ -40,3 +42,9 @@ class Traffic:
         if len(self.roads) == 0:
             self.initialise_roads()
         return chosen_road
+
+    def increase_speed(self):
+        self.speed *= 0.9
+
+    def reset_speed(self):
+        self.speed = 0.2

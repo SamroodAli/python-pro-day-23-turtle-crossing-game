@@ -11,19 +11,21 @@ traffic = Traffic()
 scoreboard = ScoreBoard()
 
 is_game_on = True
-move_speed = 0.1
+
 while is_game_on:
     screen.update()
-    time.sleep(move_speed)
+    time.sleep(traffic.speed)
     traffic.start_traffic()
 # detect collision with cars
     for car in traffic.cars:
-        distance = 20
-        if green_turtle.distance(car) < distance:
-            is_game_on = False
+        if green_turtle.ycor() == (car.lane-5) and green_turtle.distance(car) <= car.crash_distance:
             scoreboard.game_over()
+            is_game_on = False
 # passing the level
     if green_turtle.ycor() >= 255:
         green_turtle.reset_position()
         scoreboard.level_up()
+        traffic.increase_speed()
+    screen.update()
 screen.exitonclick()
+

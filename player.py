@@ -1,8 +1,7 @@
 """Player data using turtle module"""
 from turtle import Turtle, onkey
-from game_screen import screen
 STARTING_POSITION = (0, -270)
-
+from game_screen import screen
 
 class Player(Turtle):
     """Player class"""
