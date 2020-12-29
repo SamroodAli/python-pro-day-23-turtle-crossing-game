@@ -23,8 +23,8 @@ class Car(Turtle):
 
     def get_crash_distance(self):
         if self.length == 2:
-            return 11
+            return 20
         elif self.length == 3:
-            return 21
+            return 30
         elif self.length == 4:
-            return 31
+            return 40
