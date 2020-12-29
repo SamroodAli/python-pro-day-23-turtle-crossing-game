@@ -20,4 +20,5 @@ class ScoreBoard(Turtle):
 
     def level_up(self):
         self.level += 1
+        self.clear()
         self.update_level()

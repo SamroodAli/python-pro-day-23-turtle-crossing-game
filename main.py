@@ -16,4 +16,8 @@ while is_game_on:
     screen.update()
     time.sleep(0.1)
     traffic.start_traffic()
+# detect collision with cars
+    for car in traffic.cars:
+        if player.distance(car) < 20:
+            print("crash")
 screen.exitonclick()

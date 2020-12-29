@@ -6,8 +6,8 @@ import random
 class Traffic:
     def __init__(self):
         self.roads = []
-        self.cars = []
         self.initialise_roads()
+        self.cars = []
         super().__init__()
 
     def start_traffic(self):
@@ -16,8 +16,9 @@ class Traffic:
         self.remove_crossed_cars()
 
     def new_car(self):
+        lane = self.new_road()
         new_car = Car()
-        new_car.goto(300, random.choice(self.roads))
+        new_car.goto(300, lane)
         self.cars.append(new_car)
 
     def initialise_roads(self):
@@ -32,3 +33,10 @@ class Traffic:
         for car in self.cars:
             if car.xcor() < -350:
                 self.cars.remove(car)
+
+    def new_road(self):
+        chosen_road = random.choice(self.roads)
+        self.roads.remove(chosen_road)
+        if len(self.roads) == 0:
+            self.initialise_roads()
+        return chosen_road
